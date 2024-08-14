@@ -1,4 +1,4 @@
-# Administrador de Tareas
+![image](https://github.com/DanielEspanadero/task-manager-in-c/blob/master/docs/task-manager.png)
 
 ## Descripción
 
