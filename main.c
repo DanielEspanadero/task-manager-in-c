@@ -15,7 +15,7 @@ void displayMenu() {
 }
 
 int main() {
-    Task *taskList = loadTasksFromFile(DEFAULT_FILENAME);
+    Node *taskList = loadTasksFromFile(DEFAULT_FILENAME);
     int choice;
     char name[MAX_NAME_LEN];
     int priority;
@@ -32,7 +32,7 @@ int main() {
                 printf("Enter task name: ");
                 fgets(name, sizeof(name), stdin);
                 name[strcspn(name, "\n")] = 0;
-                
+
                 printf("Enter task priority (1-5): ");
                 while (scanf("%d", &priority) != 1 || priority < 1 || priority > 5) {
                     printf("\x1b[31mInvalid priority. Enter a value between 1 and 5:\x1b[0m ");
@@ -67,7 +67,7 @@ int main() {
                 printf("Enter the name of the task to mark as completed: ");
                 fgets(name, sizeof(name), stdin);
                 name[strcspn(name, "\n")] = 0;
-                
+
                 Task *taskToComplete = findTask(taskList, name);
                 if (taskToComplete) {
                     markTaskAsCompleted(taskToComplete);
@@ -81,7 +81,7 @@ int main() {
                 printf("Enter the name of the task to remove: ");
                 fgets(name, sizeof(name), stdin);
                 name[strcspn(name, "\n")] = 0;
-                
+
                 taskList = removeTask(taskList, name);
                 printf("\x1b[32mTask '%s' removed (if it existed).\x1b[0m\n", name);
                 break;
@@ -89,11 +89,12 @@ int main() {
             case 5:
                 saveTasksToFile(DEFAULT_FILENAME, taskList);
                 printf("\x1b[32mTasks saved successfully!\x1b[0m\n");
-
-            case 6:
-                saveTasksToFile(DEFAULT_FILENAME, taskList);
                 printf("\x1b[32mExiting...\x1b[0m\n");
                 return 0;
+
+            default:
+                printf("\x1b[31mInvalid option. Please try again.\x1b[0m\n");
+                break;
         }
     }
 }

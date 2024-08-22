@@ -3,7 +3,6 @@
 
 #include "task.h"
 
-void saveTasksToFile(const char *filename, Task *taskList);
-Task* loadTasksFromFile(const char *filename);
-
+void saveTasksToFile(const char *filename, Node *taskList);
+Node* loadTasksFromFile(const char *filename);
 #endif

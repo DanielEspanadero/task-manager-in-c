@@ -3,9 +3,9 @@
 
 #include "task.h"
 
-Task* addTask(Task *list, Task *newTask);
-void displayTasks(Task *list);
-Task* removeTask(Task *list, char name[]);
-Task* findTask(Task *list, char name[]);
+Node* addTask(Node *list, Task *newTask);
+void displayTasks(Node *list);
+Node* removeTask(Node *list, char name[]);
+Task* findTask(Node *list, char name[]);
 
 #endif

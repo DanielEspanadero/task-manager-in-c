@@ -16,8 +16,12 @@ typedef struct Task {
     char deadline[MAX_DATE_LEN];
     char description[MAX_DESC_LEN];
     int completed;
-    struct Task *next;
 } Task;
+
+typedef struct Node {
+    Task *task;
+    struct Node *next;
+} Node;
 
 Task* createTask(char name[], int priority, char deadline[], char description[]);
 void printTask(Task *task);

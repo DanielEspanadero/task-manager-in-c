@@ -37,7 +37,6 @@ Task* createTask(char name[], int priority, char deadline[], char description[])
     strcpy(newTask->deadline, deadline);
     strcpy(newTask->description, description);
     newTask->completed = 0;
-    newTask->next = NULL;
     return newTask;
 }
 
