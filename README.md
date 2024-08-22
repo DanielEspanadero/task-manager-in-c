@@ -46,18 +46,18 @@ Define la estructura `Task` y las declaraciones de funciones relacionadas con la
 Declara las funciones para manipular la lista de tareas:
 
 - Funciones:
-    - `Task* addTask(Task *taskList, Task *newTask)`
-    - `Task* findTask(Task *taskList, const char *name)`
-    - `Task* removeTask(Task *taskList, const char *name)`
-    - `void displayTasks(Task *taskList)`
+    - `Node* addTask(Node *list, Task *newTask)`
+    - `Task* findTask(Node *list, char name[]);`
+    - `Node* removeTask(Node *list, char name[])`
+    - `void displayTasks(Node *list)`
 
 #### `include/file.h`
 
 Declara las funciones para guardar y cargar tareas desde un archivo:
 
 - Funciones:
-    - `void saveTasksToFile(const char *filename, Task *taskList)`
-    - `Task* loadTasksFromFile(const char *filename)`
+    - `void saveTasksToFile(const char *filename, Node *taskList)`
+    - `Node* loadTasksFromFile(const char *filename)`
 
 #### `src/task.c`
 
